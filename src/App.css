@@ -1,10 +1,22 @@
 .App {
   text-align: center;
+  background-color: rgb(255, 255, 255);
+  background-image: url("./cenas-monica.jpg");
+  background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vh;
   pointer-events: none;
+  margin-right: 5vh;
+  margin-left: 5vh;
+}
+
+.img-container {
+  display: flex;
+  padding: inherit;
+  flex-direction: row;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,14 +26,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 58vh;
+  padding-bottom: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
 }
 
 .App-link {
@@ -35,4 +47,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.img-monica {
+  display: flex;
+  height: 10vh;
+  margin-right: 5vh;
+  margin-left: 5vh;
+}
+
+.result {
+  background-color: #ff746a00;
+  margin-top: 20px;
+  padding: 10px 0 10px 0;
+  min-height: 4vh;
+  border-radius: 3px;
+}
+
+.label-result {
+  color: #fff;
+}
+
+.input {
+  border-style: none;
+  height: 30px;
 }
