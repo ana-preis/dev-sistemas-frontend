@@ -1,6 +1,8 @@
 /* eslint-disable */
-import monica from './monica-01.png';
+import monica from './monica-02.png';
 import sansao from './sansao.png';
+import magali from './magali.png'
+import chico from './chico.png'
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -44,20 +46,26 @@ function App() {
     setSecondNumber(numberB)
   }
 
-  const calculate = (input, tecla, resultElement) => {
+  const calculate = (input, tecla, resultElement, resultImg) => {
     if (op == "+" && firstNumber + secondNumber !== tecla) {
       setResult("Errado")
       input.value = ""
       resultElement.style = "background-color: #961600"
+      resultImg.src = chico
+      resultImg.hidden = false
       return
     } else if (op == "-" && firstNumber - secondNumber !== tecla) {
       setResult("Errado")
       resultElement.style = "background-color: #961600"
+      resultImg.src = chico
+      resultImg.hidden = false
       input.value = ""
       return
     }
     setResult("Certo!!!")
     resultElement.style = "background-color: #007a0a"
+    resultImg.src = magali
+    resultImg.hidden = false
     setTimeout(2000)
     input.value = ""
     renderCalculator()
@@ -67,9 +75,10 @@ function App() {
     let tecla = Number(evento.key)
     let input = document.getElementById('inpNumero')
     let resultElement = document.getElementById('resultId')
+    let resultImg = document.getElementById('result-img')
     input.value = tecla
     if(!isNaN(tecla)) {
-      calculate(input, tecla, resultElement)
+      calculate(input, tecla, resultElement, resultImg)
       return
     }
     setResult("Apenas números!!")
@@ -95,7 +104,8 @@ function App() {
               <input id='inpNumero' className='input'></input>
             </div>
   
-            <div className='result' id='resultId'>
+            <div className='result' id='resultId' >
+              <img className='img-magali' hidden id='result-img'></img>
               <label className='label-result'>{result}</label>
             </div>
           </div>
