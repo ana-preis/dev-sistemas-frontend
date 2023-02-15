@@ -1,8 +1,8 @@
 /* eslint-disable */
-import monica from './monica-02.png';
-import sansao from './sansao.png';
-import magali from './magali.png'
-import chico from './chico.png'
+import monica from './assets/monica-02.png';
+import sansao from './assets/sansao.png';
+import magali from './assets/magali.png'
+import chico from './assets/chico.png'
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -83,6 +83,8 @@ function App() {
     }
     setResult("Apenas números!!")
     input.value = ""
+    resultImg.src = chico
+    resultImg.hidden = false
     resultElement.style = "background-color: #961600"
   }
 
